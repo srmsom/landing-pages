@@ -56,5 +56,52 @@
             </button>
         </form>
     </div>
+        <!-- اسکریپت ارسال اطلاعات فرم به Cloudflare Worker -->
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Generating...';
+            submitBtn.disabled = true;
+
+            const formData = {
+                templateId: this.templateId.value,
+                slug: this.slug.value,
+                title: this.title.value,
+                bio: this.bio.value,
+                ctaText: this.ctaText.value,
+                ctaLink: this.ctaLink.value
+            };
+
+            try {
+                const response = await fetch('https://landing-pages.srmsom.workers.dev/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Success! Your landing page is created: ' + result.url);
+                    window.location.href = result.url; // انتقال مستقیم به صفحه ساخته شده
+                } else {
+                    alert('Error: ' + result.message);
+                    submitBtn.textContent = 'Generate Landing Page & Pay';
+                    submitBtn.disabled = false;
+                }
+            } catch (err) {
+                alert('Connection error. Please try again.');
+                submitBtn.textContent = 'Generate Landing Page & Pay';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
+
 </body>
 </html>
