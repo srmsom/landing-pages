@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QOD - Order Your Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-slate-900 p-8 rounded-2xl shadow-2xl border border-slate-800">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl font-black text-cyan-400 tracking-wider">QOD.ir</h1>
+            <p class="text-xs text-slate-400 mt-1">Quick | Optimized | Designed</p>
+        </div>
+
+        <form id="orderForm" class="space-y-4">
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Select Template</label>
+                <select name="templateId" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-cyan-500 outline-none">
+                    <option value="template1">Template 1 (Personal / Profile)</option>
+                    <option value="template2">Template 2 (Business / Service)</option>
+                    <option value="template3">Template 3 (Product Showcase)</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Your Custom Slug</label>
+                <div class="flex items-center bg-slate-950 border border-slate-800 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-cyan-500">
+                    <span class="bg-slate-900 px-3 text-slate-500 text-sm border-r border-slate-800 py-3">qod.ir/</span>
+                    <input type="text" name="slug" placeholder="johndoe" required class="w-full bg-transparent p-3 text-sm outline-none">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Page Title / Name</label>
+                <input type="text" name="title" placeholder="John Doe - Web Creator" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-cyan-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Short Bio / Description</label>
+                <textarea name="bio" rows="3" placeholder="A short description about you or your project..." class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-cyan-500 outline-none"></textarea>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Button Text (CTA)</label>
+                <input type="text" name="ctaText" placeholder="Contact on Telegram" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-cyan-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Button URL (Target Link)</label>
+                <input type="url" name="ctaLink" placeholder="https://t.me/username" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-sm focus:ring-2 focus:ring-cyan-500 outline-none">
+            </div>
+
+            <button type="submit" class="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold py-3.5 rounded-lg transition duration-200 shadow-lg shadow-cyan-400/10 mt-2">
+                Generate Landing Page & Pay
+            </button>
+        </form>
+    </div>
+</body>
+</html>
