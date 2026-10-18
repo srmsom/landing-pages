@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-6">
+    <div class="max-w-md w-full bg-slate-900/80 backdrop-blur-md border border-slate-800 p-8 rounded-3xl shadow-2xl text-center space-y-6">
+        
+        <!-- آواتار یا لوگوی فرضی -->
+        <div class="w-24 h-24 bg-gradient-to-tr from-cyan-500 to-indigo-500 rounded-full mx-auto flex items-center justify-center text-3xl font-bold text-slate-950 shadow-lg shadow-cyan-500/20">
+            {{AVATAR_INITIAL}}
+        </div>
+
+        <div class="space-y-2">
+            <h1 class="text-2xl font-black text-white">{{TITLE}}</h1>
+            <p class="text-slate-400 text-sm leading-relaxed">{{BIO}}</p>
+        </div>
+
+        <div class="pt-4">
+            <a href="{{CTA_LINK}}" target="_blank" class="block w-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-cyan-400/20 transition duration-200">
+                {{CTA_TEXT}}
+            </a>
+        </div>
+
+        <footer class="pt-6 border-t border-slate-800/80 text-xs text-slate-500">
+            Powered by <a href="https://qod.ir" class="text-cyan-400 hover:underline">QOD.ir</a>
+        </footer>
+    </div>
+</body>
+</html>
